@@ -104,7 +104,7 @@
     <string name="settings_backup_location_none">Bez</string>
     <string name="settings_backup_location">Mjesto za sigurnosne kopije</string>
     <string name="settings_backup">Spremi sigurnosnu kopiju mojih podataka</string>
-    <string name="restore_backup_button">Vrati sigurnosnu kopiju</string>
+    <string name="restore_backup_button">Vrati sigurnosnu kopiju (Experimental)</string>
     <string name="backup">Sigurnosna kopija</string>
     <string name="restore_app_was_stopped">Sigurnosna kopija nije spremljena, jer nije nedavno korištena</string>
     <string name="restore_app_not_yet_backed_up">Sigurnosna kopija još nije spremljena</string>

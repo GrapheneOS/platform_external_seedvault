@@ -107,7 +107,7 @@
     <string name="settings_backup_location_none">אף מקום</string>
     <string name="settings_backup_location">מיקום גיבוי</string>
     <string name="settings_backup">גיבוי הנתונים שלי</string>
-    <string name="restore_backup_button">שחזור גיבוי</string>
+    <string name="restore_backup_button">שחזור גיבוי (Experimental)</string>
     <string name="backup">גיבוי</string>
     <string name="current_destination_string">מצב והגדרות גיבוי</string>
     <string name="data_management_label">גיבוי Seedvault</string>

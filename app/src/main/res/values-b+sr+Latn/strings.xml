@@ -2,7 +2,7 @@
 <resources>
     <string name="settings_backup_location">Lokacija rezervne kopije</string>
     <string name="settings_backup">Napravi rezervnu kopiju mojih podataka</string>
-    <string name="restore_backup_button">Vrati rezervnu kopiju</string>
+    <string name="restore_backup_button">Vrati rezervnu kopiju (Experimental)</string>
     <string name="current_destination_string">Status i podešavanja rezervne kopije</string>
     <string name="data_management_label">Rezervna kopija Seedvault</string>
     <string name="backup">Rezervna kopija</string>

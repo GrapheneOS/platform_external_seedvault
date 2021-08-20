@@ -28,7 +28,7 @@
     <string name="settings_backup_location_none">Καμία</string>
     <string name="settings_backup_location">Τοποθεσία αντιγράφων ασφαλείας</string>
     <string name="settings_backup">Δημιουργία αντιγράφου ασφαλείας των δεδομένων μου</string>
-    <string name="restore_backup_button">Επαναφορά αντιγράφου ασφαλείας</string>
+    <string name="restore_backup_button">Επαναφορά αντιγράφου ασφαλείας (Experimental)</string>
     <string name="backup">Αντίγραφο ασφαλείας</string>
     <string name="settings_info">Όλα τα αντίγραφα ασφαλείας είναι κρυπτογραφημένα στο τηλέφωνό σας. Για επαναφορά από το αντίγραφο ασφαλείας θα χρειαστείτε τον κωδικό αποκατάστασης 12 λέξεων.</string>
     <string name="about_source_code">Πηγαίος κώδικας: https://github.com/stevesoltys/seedvault</string>

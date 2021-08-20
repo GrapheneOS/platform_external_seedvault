@@ -102,6 +102,6 @@
     <string name="settings_backup_location_none">Engin</string>
     <string name="settings_backup_location">Staðsetning öryggisafrits</string>
     <string name="settings_backup">Búa til öryggsafrit</string>
-    <string name="restore_backup_button">Endurvekja úr öryggisafriti</string>
+    <string name="restore_backup_button">Endurvekja úr öryggisafriti (Experimental)</string>
     <string name="backup">Öryggisafrit</string>
 </resources>
