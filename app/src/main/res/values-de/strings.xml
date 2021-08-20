@@ -5,7 +5,7 @@
     <string name="settings_backup_location_none">Keiner</string>
     <string name="settings_backup_location">Sicherungsort</string>
     <string name="settings_backup">Meine Daten sichern</string>
-    <string name="restore_backup_button">Sicherung wiederherstellen</string>
+    <string name="restore_backup_button">Sicherung wiederherstellen (Experimental)</string>
     <string name="backup">Sicherung</string>
     <string name="notification_restore_error_title">Daten von %1$s konnten nicht wiederhergestellt werden</string>
     <string name="notification_restore_error_channel_title">Fehler bei automatischer Wiederherstellung vom Laufwerk</string>
