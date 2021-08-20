@@ -22,7 +22,7 @@
     <string name="settings_backup_location_none">Brak</string>
     <string name="settings_backup_location">Lokalizacja kopii zapasowych</string>
     <string name="settings_backup">Tworzenie kopii zapasowej</string>
-    <string name="restore_backup_button">Przywróć kopię zapasową</string>
+    <string name="restore_backup_button">Przywróć kopię zapasową (Experimental)</string>
     <string name="storage_fake_drive_summary">Musi być podłączona</string>
     <string name="storage_fake_drive_title">Pamięć USB</string>
     <string name="storage_fragment_restore_title">Gdzie znaleźć kopie zapasowe\?</string>

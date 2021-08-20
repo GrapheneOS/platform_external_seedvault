@@ -63,7 +63,7 @@
     <string name="settings_backup_location_none">Aucun</string>
     <string name="settings_backup_location">Emplacement de la sauvegarde</string>
     <string name="settings_backup">Sauvegarder mes données</string>
-    <string name="restore_backup_button">Restaurer la sauvegarde</string>
+    <string name="restore_backup_button">Restaurer la sauvegarde (Experimental)</string>
     <string name="backup">Sauvegarde</string>
     <string name="storage_internal_warning_message">Vous avez choisi le stockage interne pour votre sauvegarde. Ceci ne sera pas disponible lorsque votre téléphone sera perdu ou cassé.</string>
     <string name="restore_finished_error">Une erreur s\'est produite lors de la restauration de la sauvegarde.</string>

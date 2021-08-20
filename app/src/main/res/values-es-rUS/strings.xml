@@ -99,7 +99,7 @@
     <string name="settings_backup_location_internal">Almacenamiento Interno</string>
     <string name="settings_backup_location_none">Ninguno</string>
     <string name="settings_backup_location">Ubicación de respaldo</string>
-    <string name="restore_backup_button">Restaurar respaldo</string>
+    <string name="restore_backup_button">Restaurar respaldo (Experimental)</string>
     <string name="settings_backup">Respalda mi información</string>
     <string name="backup">Respaldo</string>
 </resources>

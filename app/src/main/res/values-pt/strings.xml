@@ -104,7 +104,7 @@
     <string name="settings_backup_location_none">Nenhum</string>
     <string name="settings_backup_location">Local de backup</string>
     <string name="settings_backup">Fazer backup dos meus dados</string>
-    <string name="restore_backup_button">Restaurar backup</string>
+    <string name="restore_backup_button">Restaurar backup (Experimental)</string>
     <string name="backup">Backup</string>
     <string name="about_version">Versão: %s</string>
     <string name="restore_restoring_error_message">Pode reinstalar essas apps manualmente e a restauração automática tentará restaurar os dados deles (quando ativado).</string>

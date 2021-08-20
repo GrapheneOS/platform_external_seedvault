@@ -5,7 +5,7 @@
     <string name="data_management_label">Seedvault Backup</string>
     <string name="current_destination_string">Backup status and settings</string>
 
-    <string name="restore_backup_button">Restore backup</string>
+    <string name="restore_backup_button">Restore backup (Experimental)</string>
 
     <!-- Settings -->
     <string name="settings_category_apps">App backup</string>

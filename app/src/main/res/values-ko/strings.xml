@@ -94,7 +94,7 @@
     <string name="settings_backup_location_none">없음</string>
     <string name="settings_backup_location">백업 위치</string>
     <string name="settings_backup">내 데이터 백업</string>
-    <string name="restore_backup_button">백업 복원</string>
+    <string name="restore_backup_button">백업 복원 (Experimental)</string>
     <string name="current_destination_string">백업 상태 및 설정</string>
     <string name="data_management_label">Seedvault 백업</string>
     <string name="backup">백업</string>

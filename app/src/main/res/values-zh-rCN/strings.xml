@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_backup">备份我的数据</string>
-    <string name="restore_backup_button">恢复备份</string>
+    <string name="restore_backup_button">恢复备份 (Experimental)</string>
     <string name="backup">备份</string>
     <string name="settings_backup_apk_dialog_title">真的要禁用“备份应用程序”吗？</string>
     <string name="settings_backup_apk_title">备份应用程序</string>

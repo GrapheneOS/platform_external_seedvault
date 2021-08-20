@@ -68,7 +68,7 @@
     <string name="settings_backup_location_none">Nenhum</string>
     <string name="settings_backup_location">Local de backup</string>
     <string name="settings_backup">Fazer backup dos meus dados</string>
-    <string name="restore_backup_button">Restaurar backup</string>
+    <string name="restore_backup_button">Restaurar backup (Experimental)</string>
     <string name="backup">Backup</string>
     <string name="restore_set_error">Ocorreu um erro ao carregar os backups.</string>
     <string name="restore_invalid_location_message">Não podemos encontrar nenhum backup neste local.
