@@ -5,6 +5,8 @@ import android.content.pm.PackageManager
 import android.content.pm.PackageManager.GET_SIGNATURES
 import android.content.pm.PackageManager.GET_SIGNING_CERTIFICATES
 import android.util.Log
+import android.os.UserManager
+import android.os.UserHandle
 import com.stevesoltys.seedvault.metadata.ApkSplit
 import com.stevesoltys.seedvault.metadata.PackageMetadata
 import com.stevesoltys.seedvault.metadata.PackageMetadataMap
@@ -71,6 +73,23 @@ internal class ApkRestore(
         emit(installResult)
     }
 
+    // usermanager restrictions check
+    fun isInstallationRestricted(userID: Int, context: Context): Boolean {
+
+        val userManager = UserManager.get(context)
+        val userHandle = UserHandle.getUserHandleForUid(userID)
+
+        return userManager.hasUserRestrictionForUser(
+            UserManager.DISALLOW_INSTALL_UNKNOWN_SOURCES_GLOBALLY, userHandle
+        ) || userManager.hasUserRestrictionForUser(
+            UserManager.DISALLOW_INSTALL_UNKNOWN_SOURCES, userHandle
+        ) || userManager.hasUserRestrictionForUser(
+            UserManager.DISALLOW_INSTALL_APPS, userHandle
+        ) || userManager.hasUserRestrictionForUser(
+            UserManager.DISALLOW_UNINSTALL_APPS, userHandle
+        )
+    }
+
     @Suppress("ThrowsCount", "BlockingMethodInNonBlockingContext") // flows on Dispatcher.IO
     @Throws(IOException::class, SecurityException::class)
     private suspend fun restore(
@@ -114,6 +133,11 @@ internal class ApkRestore(
             Log.w(TAG, "Package $packageName expects different signatures.")
             // TODO should we let this one pass, the sha256 hash already verifies the APK?
         }
+
+        // check if there are usermanager restrictions in place that should be obeyed
+        if (isInstallationRestricted(UserHandle.myUserId(), context)) throw SecurityException(
+            "App installation is disallowed, a usermanager restriction is in place."
+        )
 
         // get app icon and label (name)
         val appInfo = packageInfo.applicationInfo.apply {
