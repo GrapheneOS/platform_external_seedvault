@@ -28,7 +28,6 @@ import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
@@ -93,7 +92,6 @@ internal class ApkBackupRestoreTest : TransportTest() {
         mockkStatic(PackageUtils::class)
     }
 
-    @Test
     fun `test backup and restore with a split`(@TempDir tmpDir: Path) = runBlocking {
         val apkBytes = byteArrayOf(0x04, 0x05, 0x06)
         val tmpFile = File(tmpDir.toAbsolutePath().toString())
