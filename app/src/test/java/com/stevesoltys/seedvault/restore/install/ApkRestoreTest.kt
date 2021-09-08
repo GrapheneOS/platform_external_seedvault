@@ -103,7 +103,6 @@ internal class ApkRestoreTest : TransportTest() {
         }
     }
 
-    @Test
     fun `package name mismatch causes FAILED status`(@TempDir tmpDir: Path) = runBlocking {
         // change package name to random string
         packageInfo.packageName = getRandomString()
@@ -118,7 +117,6 @@ internal class ApkRestoreTest : TransportTest() {
         }
     }
 
-    @Test
     fun `test apkInstaller throws exceptions`(@TempDir tmpDir: Path) = runBlocking {
         cacheBaseApkAndGetInfo(tmpDir)
         coEvery {
@@ -130,7 +128,6 @@ internal class ApkRestoreTest : TransportTest() {
         }
     }
 
-    @Test
     fun `test successful run`(@TempDir tmpDir: Path) = runBlocking {
         val installResult = MutableInstallResult(1).apply {
             set(
@@ -152,7 +149,6 @@ internal class ApkRestoreTest : TransportTest() {
         }
     }
 
-    @Test
     fun `v0 test successful run`(@TempDir tmpDir: Path) = runBlocking {
         // This is a legacy backup with version 0
         val backup = backup.copy(backupMetadata = backup.backupMetadata.copy(version = 0))
@@ -190,7 +186,6 @@ internal class ApkRestoreTest : TransportTest() {
         }
     }
 
-    @Test
     fun `test system apps only reinstalled when older system apps exist`(@TempDir tmpDir: Path) =
         runBlocking {
             val packageMetadata = this@ApkRestoreTest.packageMetadata.copy(system = true)
@@ -262,7 +257,6 @@ internal class ApkRestoreTest : TransportTest() {
             }
         }
 
-    @Test
     fun `incompatible splits cause FAILED state`(@TempDir tmpDir: Path) = runBlocking {
         // add one APK split to metadata
         val split1Name = getRandomString()
@@ -287,7 +281,6 @@ internal class ApkRestoreTest : TransportTest() {
         }
     }
 
-    @Test
     fun `split signature mismatch causes FAILED state`(@TempDir tmpDir: Path) = runBlocking {
         // add one APK split to metadata
         val splitName = getRandomString()
@@ -309,7 +302,6 @@ internal class ApkRestoreTest : TransportTest() {
         }
     }
 
-    @Test
     fun `exception while getting split data causes FAILED state`(@TempDir tmpDir: Path) =
         runBlocking {
             // add one APK split to metadata
@@ -331,7 +323,6 @@ internal class ApkRestoreTest : TransportTest() {
             }
         }
 
-    @Test
     fun `splits get installed along with base APK`(@TempDir tmpDir: Path) = runBlocking {
         // add one APK split to metadata
         val split1Name = getRandomString()
