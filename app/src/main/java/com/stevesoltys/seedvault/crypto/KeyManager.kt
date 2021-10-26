@@ -100,9 +100,7 @@ internal class KeyManagerImpl(
             .setEncryptionPaddings(ENCRYPTION_PADDING_NONE)
             .setRandomizedEncryptionRequired(true)
         // unlocking is required only for decryption, so when restoring from backup
-        // FIXME disabled for Android 12 GSI as it crashes when importing the key
-        //  KeyStoreException: Failed to import secret key.
-        // builder.setUnlockedDeviceRequired(true)
+        builder.setUnlockedDeviceRequired(true)
         return builder.build()
     }
 
