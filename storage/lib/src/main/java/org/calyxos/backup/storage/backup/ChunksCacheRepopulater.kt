@@ -8,7 +8,7 @@ import org.calyxos.backup.storage.measure
 import org.calyxos.backup.storage.plugin.SnapshotRetriever
 import java.io.IOException
 import java.security.GeneralSecurityException
-import java.util.concurrent.TimeUnit.MILLISECONDS
+import kotlin.time.DurationUnit
 import kotlin.time.ExperimentalTime
 import kotlin.time.toDuration
 
@@ -46,7 +46,7 @@ internal class ChunksCacheRepopulater(
                 null
             }
         }
-        val snapshotDuration = (System.currentTimeMillis() - start).toDuration(MILLISECONDS)
+        val snapshotDuration = (System.currentTimeMillis() - start).toDuration(DurationUnit.MILLISECONDS)
         Log.i(TAG, "Retrieving and parsing all snapshots took $snapshotDuration")
 
         val cachedChunks = getCachedChunks(snapshots, availableChunkIds)
