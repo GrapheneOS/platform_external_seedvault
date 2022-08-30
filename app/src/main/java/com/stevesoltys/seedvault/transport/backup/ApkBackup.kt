@@ -108,8 +108,8 @@ internal class ApkBackup(
         val sha256 = copyStreamsAndGetHash(inputStream, streamGetter(name))
 
         // back up splits if they exist
-        val splits =
-            if (packageInfo.splitNames == null) null else backupSplitApks(packageInfo, streamGetter)
+        val splits = if ((packageInfo.splitNames?.size ?: 0) == 0) null
+            else backupSplitApks(packageInfo, streamGetter)
 
         Log.d(TAG, "Backed up new APK of $packageName with version $version.")
 
