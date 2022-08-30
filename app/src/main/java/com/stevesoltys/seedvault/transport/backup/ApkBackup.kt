@@ -109,7 +109,7 @@ internal class ApkBackup(
 
         // back up splits if they exist
         val splits =
-            if (packageInfo.splitNames == null) null else backupSplitApks(packageInfo, streamGetter)
+            if ((packageInfo.splitNames?.size ?: 0) == 0) null else backupSplitApks(packageInfo, streamGetter)
 
         Log.d(TAG, "Backed up new APK of $packageName with version $version.")
 
