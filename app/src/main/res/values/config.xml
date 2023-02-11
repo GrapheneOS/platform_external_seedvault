@@ -8,7 +8,7 @@
     Launch an intent with the action "com.stevesoltys.seedvault.RESTORE_BACKUP"
     to trigger restore during device setup.
     -->
-    <bool name="show_restore_in_settings">false</bool>
+    <bool name="show_restore_in_settings">true</bool>
 
     <!--
     Add only storage here that is also available
