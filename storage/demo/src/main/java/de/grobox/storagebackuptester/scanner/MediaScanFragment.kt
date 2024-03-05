@@ -56,9 +56,9 @@ open class MediaScanFragment : Fragment() {
         setHasOptionsMenu(true)
         requireActivity().title = arguments?.getString("name")
         val v = inflater.inflate(R.layout.fragment_scan, container, false)
-        scrollView = v.findViewById(R.id.scrollView)
-        logView = v.findViewById(R.id.logView)
-        progressBar = v.findViewById(R.id.progressBar)
+        scrollView = v.requireViewById(R.id.scrollView)
+        logView = v.requireViewById(R.id.logView)
+        progressBar = v.requireViewById(R.id.progressBar)
         loadText()
         return v
     }

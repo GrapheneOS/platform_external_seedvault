@@ -54,9 +54,9 @@ internal class BackupContentAdapter(private val listener: ContentClickListener) 
     }
 
     internal abstract class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        protected val layout: ViewGroup = view.findViewById(R.id.layout)
-        private val icon: ImageView = view.findViewById(R.id.icon)
-        private val title: TextView = view.findViewById(R.id.title)
+        protected val layout: ViewGroup = view.requireViewById(R.id.layout)
+        private val icon: ImageView = view.requireViewById(R.id.icon)
+        private val title: TextView = view.requireViewById(R.id.title)
 
         open fun bind(item: BackupContentItem) {
             icon.setImageResource(item.contentType.drawableRes)
@@ -65,7 +65,7 @@ internal class BackupContentAdapter(private val listener: ContentClickListener) 
     }
 
     internal inner class MediaHolder(view: View) : ViewHolder(view) {
-        private val switch: SwitchCompat = view.findViewById(R.id.switchView)
+        private val switch: SwitchCompat = view.requireViewById(R.id.switchView)
 
         override fun bind(item: BackupContentItem) {
             super.bind(item)
@@ -81,7 +81,7 @@ internal class BackupContentAdapter(private val listener: ContentClickListener) 
     }
 
     internal inner class CustomHolder(view: View) : ViewHolder(view) {
-        private val overflow: ImageButton = view.findViewById(R.id.overflow)
+        private val overflow: ImageButton = view.requireViewById(R.id.overflow)
 
         override fun bind(item: BackupContentItem) {
             super.bind(item)

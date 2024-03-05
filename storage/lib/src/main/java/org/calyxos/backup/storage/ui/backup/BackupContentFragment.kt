@@ -58,14 +58,14 @@ public abstract class BackupContentFragment : Fragment(), ContentClickListener {
         savedInstanceState: Bundle?,
     ): View {
         val v = inflater.inflate(R.layout.fragment_backup_content, container, false)
-        val list: RecyclerView = v.findViewById(R.id.list)
+        val list: RecyclerView = v.requireViewById(R.id.list)
 
         val adapter = BackupContentAdapter(this)
         list.adapter = adapter
         viewModel.content.observe(viewLifecycleOwner) {
             adapter.setItems(it)
         }
-        v.findViewById<FloatingActionButton>(R.id.fab).setOnClickListener {
+        v.requireViewById<FloatingActionButton>(R.id.fab).setOnClickListener {
             addRequest.launch(DocumentsContract.buildRootsUri(EXTERNAL_STORAGE_PROVIDER_AUTHORITY))
         }
         return v
