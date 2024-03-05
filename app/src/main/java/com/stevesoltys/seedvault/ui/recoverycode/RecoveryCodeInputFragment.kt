@@ -147,7 +147,7 @@ class RecoveryCodeInputFragment : Fragment() {
             return
         }
         if (forStoringNewCode) {
-            val keyguardManager = requireContext().getSystemService(KeyguardManager::class.java)
+            val keyguardManager = requireContext().getSystemService(KeyguardManager::class.java)!!
             if (keyguardManager.isDeviceSecure) {
                 // if we have a lock-screen secret, we can ask for it before storing the code
                 storeNewCodeAfterAuth(input)
