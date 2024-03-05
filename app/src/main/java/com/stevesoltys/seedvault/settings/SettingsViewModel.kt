@@ -20,7 +20,7 @@ import androidx.annotation.UiThread
 import androidx.core.content.ContextCompat.startForegroundService
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations.switchMap
+import com.stevesoltys.seedvault.temp.switchMap
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.DiffUtil.calculateDiff

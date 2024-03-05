@@ -15,7 +15,7 @@ import androidx.annotation.UiThread
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations.switchMap
+import com.stevesoltys.seedvault.temp.switchMap
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.stevesoltys.seedvault.BackupMonitor
