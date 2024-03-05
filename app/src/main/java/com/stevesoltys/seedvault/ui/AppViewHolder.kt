@@ -22,12 +22,12 @@ internal abstract class AppViewHolder(protected val v: View) : RecyclerView.View
     protected val pm: PackageManager = context.packageManager
 
     protected val clickableBackground = v.background!!
-    protected val appIcon: ImageView = v.findViewById(R.id.appIcon)
-    protected val appName: TextView = v.findViewById(R.id.appName)
-    protected val appInfo: TextView = v.findViewById(R.id.appInfo)
-    protected val appStatus: ImageView = v.findViewById(R.id.appStatus)
-    protected val progressBar: ProgressBar = v.findViewById(R.id.progressBar)
-    protected val switchView: Switch = v.findViewById(R.id.switchView)
+    protected val appIcon: ImageView = v.requireViewById(R.id.appIcon)
+    protected val appName: TextView = v.requireViewById(R.id.appName)
+    protected val appInfo: TextView = v.requireViewById(R.id.appInfo)
+    protected val appStatus: ImageView = v.requireViewById(R.id.appStatus)
+    protected val progressBar: ProgressBar = v.requireViewById(R.id.progressBar)
+    protected val switchView: Switch = v.requireViewById(R.id.switchView)
 
     init {
         // don't use clickable background by default

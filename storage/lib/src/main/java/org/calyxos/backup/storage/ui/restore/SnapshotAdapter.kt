@@ -45,10 +45,10 @@ internal class SnapshotAdapter(private val listener: SnapshotClickListener) :
     }
 
     inner class SnapshotViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val layout: ViewGroup = view.findViewById(R.id.layout)
-        private val nameView: TextView = view.findViewById(R.id.nameView)
-        private val timeView: TextView = view.findViewById(R.id.timeView)
-        private val sizeView: TextView = view.findViewById(R.id.sizeView)
+        private val layout: ViewGroup = view.requireViewById(R.id.layout)
+        private val nameView: TextView = view.requireViewById(R.id.nameView)
+        private val timeView: TextView = view.requireViewById(R.id.timeView)
+        private val sizeView: TextView = view.requireViewById(R.id.sizeView)
 
         fun bind(item: SnapshotItem) {
             if (item.snapshot == null) {

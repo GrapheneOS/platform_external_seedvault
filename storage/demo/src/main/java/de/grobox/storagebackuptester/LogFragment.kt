@@ -50,11 +50,11 @@ open class LogFragment : Fragment() {
     ): View {
         setHasOptionsMenu(true)
         val v = inflater.inflate(R.layout.fragment_log, container, false)
-        list = v.findViewById(R.id.listView)
+        list = v.requireViewById(R.id.listView)
         list.adapter = adapter
-        progressBar = v.findViewById(R.id.progressBar)
-        horizontalProgressBar = v.findViewById(R.id.horizontalProgressBar)
-        button = v.findViewById(R.id.button)
+        progressBar = v.requireViewById(R.id.progressBar)
+        horizontalProgressBar = v.requireViewById(R.id.horizontalProgressBar)
+        button = v.requireViewById(R.id.button)
         viewModel.backupLog.observe(viewLifecycleOwner) { progress ->
             progress.text?.let { adapter.addItem(it) }
             horizontalProgressBar.max = progress.total

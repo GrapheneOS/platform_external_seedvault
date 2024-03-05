@@ -30,8 +30,8 @@ class RecoveryCodeOutputFragment : Fragment() {
 
         if (!isDebugBuild()) getActivity()?.window?.addFlags(FLAG_SECURE)
 
-        wordList = v.findViewById(R.id.wordList)
-        confirmCodeButton = v.findViewById(R.id.confirmCodeButton)
+        wordList = v.requireViewById(R.id.wordList)
+        confirmCodeButton = v.requireViewById(R.id.confirmCodeButton)
 
         return v
     }

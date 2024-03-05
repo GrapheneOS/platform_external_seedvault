@@ -38,7 +38,7 @@ class LogAdapter : RecyclerView.Adapter<LogAdapter.ViewHolder>() {
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val logView: TextView = view.findViewById(R.id.logView)
+        private val logView: TextView = view.requireViewById(R.id.logView)
 
         fun bind(item: String) {
             logView.text = item

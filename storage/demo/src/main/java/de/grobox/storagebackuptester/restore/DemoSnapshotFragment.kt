@@ -27,10 +27,10 @@ class DemoSnapshotFragment : SnapshotFragment() {
         savedInstanceState: Bundle?,
     ): View {
         val v = super.onCreateView(inflater, container, savedInstanceState)
-        val bottomStub: ViewStub = v.findViewById(R.id.bottomStub)
+        val bottomStub: ViewStub = v.requireViewById(R.id.bottomStub)
         bottomStub.layoutResource = R.layout.footer_snapshot
         val footer = bottomStub.inflate()
-        footer.findViewById<Button>(R.id.button).setOnClickListener {
+        footer.requireViewById<Button>(R.id.button).setOnClickListener {
             requireActivity().onBackPressed()
         }
         return v

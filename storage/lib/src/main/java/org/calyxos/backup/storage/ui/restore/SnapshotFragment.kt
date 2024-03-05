@@ -40,9 +40,9 @@ public abstract class SnapshotFragment : Fragment(), SnapshotClickListener {
         requireActivity().setTitle(R.string.snapshots_title)
 
         val v = inflater.inflate(R.layout.fragment_snapshot, container, false)
-        val list: RecyclerView = v.findViewById(R.id.list)
-        val progressBar: ProgressBar = v.findViewById(R.id.progressBar)
-        val emptyStateView: TextView = v.findViewById(R.id.emptyStateView)
+        val list: RecyclerView = v.requireViewById(R.id.list)
+        val progressBar: ProgressBar = v.requireViewById(R.id.progressBar)
+        val emptyStateView: TextView = v.requireViewById(R.id.emptyStateView)
 
         val adapter = SnapshotAdapter(this)
         list.adapter = adapter
