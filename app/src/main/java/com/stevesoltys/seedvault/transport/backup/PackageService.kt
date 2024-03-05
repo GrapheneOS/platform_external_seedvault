@@ -190,7 +190,7 @@ internal class PackageService(
              */
             true
         } else {
-            applicationInfo.flags and FLAG_ALLOW_BACKUP != 0
+            applicationInfo!!.flags and FLAG_ALLOW_BACKUP != 0
         }
     }
 
@@ -223,7 +223,7 @@ internal fun PackageInfo.isUserVisible(context: Context): Boolean {
 
 internal fun PackageInfo.isSystemApp(): Boolean {
     if (packageName == MAGIC_PACKAGE_MANAGER || applicationInfo == null) return true
-    return applicationInfo.flags and FLAG_SYSTEM != 0
+    return applicationInfo!!.flags and FLAG_SYSTEM != 0
 }
 
 /**
@@ -232,17 +232,17 @@ internal fun PackageInfo.isSystemApp(): Boolean {
  */
 internal fun PackageInfo.isNotUpdatedSystemApp(): Boolean {
     if (packageName == MAGIC_PACKAGE_MANAGER || applicationInfo == null) return true
-    val isSystemApp = applicationInfo.flags and FLAG_SYSTEM != 0
-    val isUpdatedSystemApp = applicationInfo.flags and FLAG_UPDATED_SYSTEM_APP != 0
+    val isSystemApp = applicationInfo!!.flags and FLAG_SYSTEM != 0
+    val isUpdatedSystemApp = applicationInfo!!.flags and FLAG_UPDATED_SYSTEM_APP != 0
     return isSystemApp && !isUpdatedSystemApp
 }
 
 internal fun PackageInfo.isStopped(): Boolean {
     if (packageName == MAGIC_PACKAGE_MANAGER || applicationInfo == null) return false
-    return applicationInfo.flags and FLAG_STOPPED != 0
+    return applicationInfo!!.flags and FLAG_STOPPED != 0
 }
 
 internal fun PackageInfo.isTestOnly(): Boolean {
     if (packageName == MAGIC_PACKAGE_MANAGER || applicationInfo == null) return false
-    return applicationInfo.flags and FLAG_TEST_ONLY != 0
+    return applicationInfo!!.flags and FLAG_TEST_ONLY != 0
 }
