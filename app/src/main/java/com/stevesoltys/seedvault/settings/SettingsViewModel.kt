@@ -179,7 +179,7 @@ internal class SettingsViewModel(
 
     private fun getAppStatusResult(): LiveData<AppStatusResult> = liveData(Dispatchers.Default) {
         val list = appListRetriever.getAppList()
-        val oldList = mAppStatusList.value?.appStatusList ?: emptyList()
+        val oldList : List<AppListItem> = mAppStatusList.value?.appStatusList ?: emptyList()
         val diff = calculateDiff(AppStatusDiff(oldList, list))
         emit(AppStatusResult(list, diff))
     }

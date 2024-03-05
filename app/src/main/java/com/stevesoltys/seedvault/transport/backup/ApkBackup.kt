@@ -75,13 +75,13 @@ internal class ApkBackup(
         }
 
         // TODO remove when adding support for packages with multiple signers
-        if (packageInfo.signingInfo.hasMultipleSigners()) {
+        if (packageInfo.signingInfo!!.hasMultipleSigners()) {
             Log.e(TAG, "Package $packageName has multiple signers. Not backing it up.")
             return null
         }
 
         // get signatures
-        val signatures = packageInfo.signingInfo.getSignatures()
+        val signatures : List<String> = packageInfo.signingInfo?.getSignatures() ?: emptyList()
         if (signatures.isEmpty()) {
             Log.e(TAG, "Package $packageName has no signatures. Not backing it up.")
             return null
@@ -108,7 +108,7 @@ internal class ApkBackup(
         }
 
         // get an InputStream for the APK
-        val inputStream = getApkInputStream(packageInfo.applicationInfo.sourceDir)
+        val inputStream = getApkInputStream(packageInfo.applicationInfo!!.sourceDir)
         // copy the APK to the storage's output and calculate SHA-256 hash while at it
         val name = crypto.getNameForApk(metadataManager.salt, packageName)
         val sha256 = copyStreamsAndGetHash(inputStream, streamGetter(name))
@@ -161,7 +161,7 @@ internal class ApkBackup(
     ): List<ApkSplit> {
         check(packageInfo.splitNames != null)
         // attention: though not documented, splitSourceDirs can be null
-        val splitSourceDirs = packageInfo.applicationInfo.splitSourceDirs ?: emptyArray()
+        val splitSourceDirs : Array<String> = packageInfo.applicationInfo?.splitSourceDirs ?: emptyArray<String>()
         check(packageInfo.splitNames.size == splitSourceDirs.size) {
             "Size Mismatch! ${packageInfo.splitNames.size} != ${splitSourceDirs.size} " +
                 "splitNames is ${packageInfo.splitNames.toList()}, " +

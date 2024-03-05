@@ -120,7 +120,7 @@ internal class ApkRestore(
 
         // parse APK (GET_SIGNATURES is needed even though deprecated)
         @Suppress("DEPRECATION") val flags = GET_SIGNING_CERTIFICATES or GET_SIGNATURES
-        val packageInfo = pm.getPackageArchiveInfo(cachedApk.absolutePath, flags)
+        val packageInfo = pm.getPackageArchiveInfo(cachedApk!!.absolutePath, flags)
             ?: throw IOException("getPackageArchiveInfo returned null")
 
         // check APK package name
@@ -139,7 +139,7 @@ internal class ApkRestore(
         }
 
         // check signatures
-        if (metadata.signatures != packageInfo.signingInfo.getSignatures()) {
+        if (metadata.signatures != packageInfo.signingInfo?.getSignatures()) {
             Log.w(TAG, "Package $packageName expects different signatures.")
             // TODO should we let this one pass, the sha256 hash already verifies the APK?
         }
@@ -150,12 +150,12 @@ internal class ApkRestore(
         )
 
         // get app icon and label (name)
-        val appInfo = packageInfo.applicationInfo.apply {
+        val appInfo = packageInfo.applicationInfo?.apply {
             // set APK paths before, so package manager can find it for icon extraction
             sourceDir = cachedApk.absolutePath
             publicSourceDir = cachedApk.absolutePath
         }
-        val icon = appInfo.loadIcon(pm)
+        val icon = appInfo!!.loadIcon(pm)
         val name = pm.getApplicationLabel(appInfo)
 
         installResult.update(packageName) { result ->
