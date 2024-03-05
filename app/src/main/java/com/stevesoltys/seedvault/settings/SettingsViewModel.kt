@@ -58,7 +58,7 @@ internal class SettingsViewModel(
 ) : RequireProvisioningViewModel(app, settingsManager, keyManager) {
 
     private val contentResolver = app.contentResolver
-    private val connectivityManager = app.getSystemService(ConnectivityManager::class.java)
+    private val connectivityManager = app.getSystemService(ConnectivityManager::class.java)!!
 
     override val isRestoreOperation = false
 
